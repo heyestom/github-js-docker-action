@@ -1,0 +1,13 @@
+# action.yml
+name: 'Hello World'
+description: 'Greet someone and record the time'
+inputs:
+  auto-merge-user:  # id of input
+    description: 'Who can have their PRs auto merged'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.who-to-greet }}
+
